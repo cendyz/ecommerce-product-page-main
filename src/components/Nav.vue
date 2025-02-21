@@ -22,7 +22,7 @@
 					<div tabindex="0" role="button" class="btn btn-ghost btn-circle">
 						<div class="indicator">
 							<img :src="cart" alt="" cart />
-							<span class="badge badge-lg indicator-item">0</span>
+							<span class="badge badge-lg indicator-item z-[0]">0</span>
 						</div>
 					</div>
 					<div tabindex="0" class="card card-compact dropdown-content bg-base-100 z-[1] mt-3 w-52 shadow">
@@ -55,7 +55,9 @@
 			</div>
 		</div>
 
-		<div class="bg-black absolute w-full h-full top-0 z-[10]" :class="isOpen ?'z-10 opacity-[.75]' :"></div>
+		<div
+			class="bg-black absolute w-full h-full top-0 transition-opacity duration-200"
+			:class="[isOpen ? 'z-10 opacity-[.75]' : 'opacity-0', zIndexStatus && 'z-[-10]']"></div>
 	</nav>
 </template>
 
@@ -69,11 +71,16 @@ import closeMenu from '@/images/icon-close.svg'
 
 const linksData = ref<string[]>(['collections', 'men', 'women', 'about', 'contact'])
 const isOpen = ref<boolean>(false)
+const zIndexStatus = ref<boolean>(false)
 const handleMenu = (): void => {
 	if (isOpen.value) {
 		isOpen.value = false
+		setTimeout(() => {
+			zIndexStatus.value = true
+		}, 400)
 	} else {
 		isOpen.value = true
+		zIndexStatus.value = false
 	}
 }
 </script>
