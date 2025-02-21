@@ -56,7 +56,7 @@
 		</div>
 
 		<div
-			class="bg-black absolute w-full h-full top-0 transition-opacity duration-200"
+			class="bg-black absolute w-full h-full top-0 transition-opacity duration-200" @click="checkE"
 			:class="[isOpen ? 'z-10 opacity-[.75]' : 'opacity-0', zIndexStatus && 'z-[-10]']"></div>
 	</nav>
 </template>
@@ -77,10 +77,16 @@ const handleMenu = (): void => {
 		isOpen.value = false
 		setTimeout(() => {
 			zIndexStatus.value = true
-		}, 400)
+		}, 300)
 	} else {
 		isOpen.value = true
 		zIndexStatus.value = false
+	}
+}
+
+const checkE = (e:Event):void => {
+	if(e.target) {
+		handleMenu()
 	}
 }
 </script>
