@@ -5,7 +5,7 @@
 			:class="isOpen ? 'ranslate-x-0' : 'translate-x-[-100%]'">
 			<ul class="menu bg-base-200 rounded-box w-fit gap-y-[2.5rem] bg-transparent">
 				<li v-for="(item, index) in linksData" :key="index">
-					<a class="capitalize text-[1.6rem] font-w700 p-0 text-blue-100">{{ item }}</a>
+					<a class="capitalize text-[1.6rem] font-bold p-0 text-blue-100">{{ item }}</a>
 				</li>
 			</ul>
 		</div>
@@ -56,7 +56,8 @@
 		</div>
 
 		<div
-			class="bg-black absolute w-full h-full top-0 transition-opacity duration-200" @click="checkE"
+			class="bg-black absolute w-full h-full top-0 transition-opacity duration-200"
+			@click="checkE"
 			:class="[isOpen ? 'z-10 opacity-[.75]' : 'opacity-0', zIndexStatus && 'z-[-10]']"></div>
 	</nav>
 </template>
@@ -84,9 +85,12 @@ const handleMenu = (): void => {
 	}
 }
 
-const checkE = (e:Event):void => {
-	if(e.target) {
-		handleMenu()
+const checkE = (e: Event): void => {
+	if (e.target) {
+		isOpen.value = false
+		setTimeout(() => {
+			zIndexStatus.value = true
+		}, 300)
 	}
 }
 </script>

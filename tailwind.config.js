@@ -23,7 +23,6 @@ export default {
 					400: 'hsl(223, 64%, 98%)',
 				},
 			},
-			fontWeight: { w400: '400,', w700: '700' },
 		},
 	},
 	plugins: [require('daisyui')],
