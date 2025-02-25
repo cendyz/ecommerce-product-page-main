@@ -26,17 +26,22 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { Ref, onUpdated, inject } from 'vue';
 import plus from '@/images/icon-plus.svg'
 import minus from '@/images/icon-minus.svg'
 import cartIcon from '@/images/icon-cart.svg'
+const emit = defineEmits(['updateAmount'])
+const amount = inject<Ref<number>>('amount')
 
-const amount = ref<number>(0)
 
 const decreaseAmount = ():void => {
     if(amount.value === 0) return
     amount.value--
 }
+
+onUpdated(()=>{
+    emit('updateAmount', amount.value)
+})
 </script>
 
 <style scoped>

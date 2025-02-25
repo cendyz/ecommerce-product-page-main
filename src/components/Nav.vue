@@ -22,7 +22,9 @@
 					<div tabindex="0" role="button" class="btn btn-ghost btn-circle">
 						<div class="indicator">
 							<img :src="cart" alt="" cart />
-							<span class="badge badge-lg indicator-item z-[0]">0</span>
+							<span class="badge badge-lg indicator-item z-[0] border-none" :class="amount !== 0 && 'bg-orange-100'">{{
+								amount
+							}}</span>
 						</div>
 					</div>
 					<div tabindex="0" class="card card-compact dropdown-content bg-base-100 z-[1] mt-3 w-52 shadow">
@@ -63,7 +65,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, Ref, inject } from 'vue'
 import logo from '@/images/logo.svg'
 import burgir from '@/images/icon-menu.svg'
 import cart from '@/images/icon-cart.svg'
@@ -93,6 +95,8 @@ const checkE = (e: Event): void => {
 		}, 300)
 	}
 }
+
+const amount = inject<Ref<number>>('amount')
 </script>
 
 <style scoped>
