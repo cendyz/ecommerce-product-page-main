@@ -1,6 +1,6 @@
 <template>
-	<header>
-		<Splide
+    <section>
+        <Splide
 			:options="{
 				type: 'loop',
 				perPage: 1,
@@ -12,10 +12,10 @@
 				<img :src="item" class="w-full" />
 			</SplideSlide>
 		</Splide>
-	</header>
+    </section>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref } from 'vue'
 import { Splide, SplideSlide } from '@splidejs/vue-splide'
 import '@splidejs/vue-splide/css'
@@ -41,4 +41,9 @@ const imgData = ref([product1, product2, product3, product4])
 		stroke-width: 3;
 	}
 }
+
+.splide__arrow:hover:not(:disabled) {
+	opacity: 1;
+}
+
 </style>

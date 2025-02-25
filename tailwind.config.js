@@ -11,6 +11,10 @@ export default {
 			container: {
 				center: true,
 			},
+			fontWeight: {
+				k400: '400',
+				k700: '700',
+			},
 			colors: {
 				orange: {
 					100: 'hsl(26, 100%, 55%)',
