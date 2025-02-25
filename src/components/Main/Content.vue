@@ -14,9 +14,9 @@
 			<p class="text-blue-200 text-[1.3rem] font-k700 tracking-wide line-through">$250.00</p>
 		</div>
 		<div class="flex justify-between items-center mt-[2rem] rounded-lg bg-blue-400">
-			<button class="p-[1.7rem]"><img :src="minus" alt="minus icon" /></button>
-			<p class="font-k700">0</p>
-			<button class="p-[1.7rem]"><img :src="plus" alt="plus icon" /></button>
+			<button class="p-[1.7rem]" @click="decreaseAmount"><img :src="minus" alt="minus icon" /></button>
+			<p class="font-k700">{{amount}}</p>
+			<button class="p-[1.7rem]" @click="amount++"><img :src="plus" alt="plus icon" /></button>
 		</div>
 		<button
 			class="mt-[1.1rem] btn no-animation bg-orange-100 text-[1.5rem] btn-block h-[4.6rem] leading-[0] hover:bg-orange-100">
@@ -26,9 +26,17 @@
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue';
 import plus from '@/images/icon-plus.svg'
 import minus from '@/images/icon-minus.svg'
 import cartIcon from '@/images/icon-cart.svg'
+
+const amount = ref<number>(0)
+
+const decreaseAmount = ():void => {
+    if(amount.value === 0) return
+    amount.value--
+}
 </script>
 
 <style scoped>
