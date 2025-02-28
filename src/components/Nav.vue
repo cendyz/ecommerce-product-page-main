@@ -23,12 +23,12 @@
 						<div class="indicator">
 							<img :src="cart" alt="" cart />
 							<span
-								class="badge badge-lg indicator-item z-[0] border-none"
+								class="badge badge-lg indicator-item z-[0] border-none text-white"
 								:class="{
-									hidden: amount === 0,
-									'bg-orange-100': amount !== 0,
+									hidden: !carAmount,
+									'bg-orange-100': carAmount > 0,
 								}"
-								>{{ amount }}</span
+								>{{ carAmount }}</span
 							>
 						</div>
 					</div>
@@ -39,16 +39,6 @@
 							<img alt="your avatar" :src="avatar" />
 						</div>
 					</div>
-					<ul tabindex="0" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-						<li>
-							<a class="justify-between">
-								Profile
-								<span class="badge">New</span>
-							</a>
-						</li>
-						<li><a>Settings</a></li>
-						<li><a>Logout</a></li>
-					</ul>
 				</div>
 			</div>
 		</div>
@@ -60,25 +50,43 @@
 		<Transition mode="out-in">
 			<div v-if="emptyCart" class="absolute top-[9.5%] w-[97%] left-1/2 translate-x-[-50%] bg-white rounded-lg z-[11]">
 				<p class="font-k700 p-[2.2rem] pb-[2.5rem] border-b-[1px]">Cart</p>
-				<p class="text-center font-k700 text-blue-200 py-[11rem]">Your cart is Empty.</p>
+				<p v-show="carAmount === 0" class="text-center font-k700 text-blue-200 py-[11rem]">Your cart is Empty.</p>
+				<div v-show="carAmount > 0" class="p-[2.2rem]">
+					<div class="flex items-center justify-between">
+						<img :src="thumbCart" alt="product icon" class="w-[5rem] rounded-lg" />
+						<div class="text-gray-500">
+							<p>Fall Limited Ediion Sneakers</p>
+							<p>
+								$125.00 x {{ carAmount }}
+								<span class="text-black font-k700 ml-[0.2rem]">${{ (125 * carAmount).toFixed(2) }}</span>
+							</p>
+						</div>
+						<img :src="trash" alt="delete icon" class="block" @click="carAmount = 0" />
+					</div>
+					<button
+						class="btn btnCheckout no-animation btn-block text-[1.6rem] mt-[2.2rem] py-[2.5rem] font-k700 leading-[0] bg-orange-100 rounded-2xl">
+						Checkout
+					</button>
+				</div>
 			</div>
 		</Transition>
 	</nav>
 </template>
 
 <script setup lang="ts">
-import { ref, Ref, inject, onMounted, onUnmounted } from 'vue'
+import { ref, Ref, inject } from 'vue'
 import logo from '@/images/logo.svg'
 import burgir from '@/images/icon-menu.svg'
 import cart from '@/images/icon-cart.svg'
 import avatar from '@/images/image-avatar.png'
 import closeMenu from '@/images/icon-close.svg'
+import thumbCart from '@/images/image-product-1-thumbnail.jpg'
+import trash from '@/images/icon-delete.svg'
 
 const linksData = ref<string[]>(['collections', 'men', 'women', 'about', 'contact'])
 const emptyCart: Ref<boolean> = ref(false)
 const navRef = ref(null)
-
-const amount = inject<Ref<number>>('amount')
+const carAmount = inject<Ref<number>>('carAmount')
 const isOpen = inject<Ref<boolean>>('isOpen')
 const zIndexStatus = inject<Ref<boolean>>('zIndexStatus')
 
@@ -105,28 +113,18 @@ const checkE = (e: Event): void => {
 }
 
 const handleCart = (): void => {
-	if (amount.value === 0) {
-		emptyCart.value = !emptyCart.value
-	}
+	emptyCart.value = !emptyCart.value
 }
-
-const handleClickOutside = (e: Event): void => {
-	if (navRef.value && !navRef.value.contains(e.target)) {
-		emptyCart.value = false
-	}
-}
-
-onMounted(() => {
-	console.log('ddd');
-	document.addEventListener('click', handleClickOutside)
-})
-
-onUnmounted(() => {
-	document.removeEventListener('click', handleClickOutside)
-})
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+.btnCheckout {
+	&:hover {
+		background-color: hsl(26, 100%, 55%);
+		border-color: white;
+	}
+}
+
 .v-enter-from,
 .v-leave-to {
 	opacity: 0;

@@ -19,6 +19,7 @@
 			<button class="p-[1.7rem]" @click="amount++"><img :src="plus" alt="plus icon" /></button>
 		</div>
 		<button
+			@click="checkE"
 			class="mt-[1.1rem] btn no-animation bg-orange-100 text-[1.5rem] btn-block h-[4.6rem] leading-[0] hover:bg-orange-100">
 			<img :src="cartIcon" alt="cart icon" class="cartIcon" /> Add to cart
 		</button>
@@ -26,21 +27,23 @@
 </template>
 
 <script setup lang="ts">
-import { Ref, onUpdated, inject } from 'vue'
+import { Ref, inject } from 'vue'
 import plus from '@/images/icon-plus.svg'
 import minus from '@/images/icon-minus.svg'
 import cartIcon from '@/images/icon-cart.svg'
 const emit = defineEmits(['updateAmount'])
 const amount = inject<Ref<number>>('amount')
+const carAmount = inject<Ref<number>>('carAmount')
 
 const decreaseAmount = (): void => {
 	if (amount.value === 0) return
 	amount.value--
 }
 
-onUpdated(() => {
-	emit('updateAmount', amount.value)
-})
+const checkE = () => {
+	if (amount.value === 0) return
+	carAmount.value += amount.value
+}
 </script>
 
 <style scoped>
