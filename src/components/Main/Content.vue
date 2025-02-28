@@ -15,7 +15,7 @@
 		</div>
 		<div class="flex justify-between items-center mt-[2rem] rounded-lg bg-blue-400">
 			<button class="p-[1.7rem]" @click="decreaseAmount"><img :src="minus" alt="minus icon" /></button>
-			<p class="font-k700">{{amount}}</p>
+			<p class="font-k700">{{ amount }}</p>
 			<button class="p-[1.7rem]" @click="amount++"><img :src="plus" alt="plus icon" /></button>
 		</div>
 		<button
@@ -26,21 +26,20 @@
 </template>
 
 <script setup lang="ts">
-import { Ref, onUpdated, inject } from 'vue';
+import { Ref, onUpdated, inject } from 'vue'
 import plus from '@/images/icon-plus.svg'
 import minus from '@/images/icon-minus.svg'
 import cartIcon from '@/images/icon-cart.svg'
 const emit = defineEmits(['updateAmount'])
 const amount = inject<Ref<number>>('amount')
 
-
-const decreaseAmount = ():void => {
-    if(amount.value === 0) return
-    amount.value--
+const decreaseAmount = (): void => {
+	if (amount.value === 0) return
+	amount.value--
 }
 
-onUpdated(()=>{
-    emit('updateAmount', amount.value)
+onUpdated(() => {
+	emit('updateAmount', amount.value)
 })
 </script>
 

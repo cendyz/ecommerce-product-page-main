@@ -2,7 +2,7 @@
 	<nav ref="navRef">
 		<div
 			class="absolute w-[60%] h-[100%] bg-white left-0 p-[1rem] pt-[9rem] transition-transform z-20 duration-300"
-			:class="isOpen ? 'ranslate-x-0' : 'translate-x-[-100%]'">
+			:class="isOpen ? 'translate-x-0' : 'translate-x-[-100%]'">
 			<ul class="menu bg-base-200 rounded-box w-fit gap-y-[2.5rem] bg-transparent">
 				<li v-for="(item, index) in linksData" :key="index">
 					<a class="capitalize text-[1.6rem] font-bold p-0 text-blue-100">{{ item }}</a>
@@ -54,7 +54,7 @@
 		</div>
 
 		<div
-			class="bg-black absolute w-full h-full top-0 transition-opacity duration-200"
+			class="bg-black absolute w-full h-full top-0 left-0 transition-opacity duration-200"
 			@click="checkE"
 			:class="[isOpen ? 'z-10 opacity-[.75]' : 'opacity-0', zIndexStatus && 'z-[-10]']"></div>
 		<Transition mode="out-in">
@@ -76,10 +76,12 @@ import closeMenu from '@/images/icon-close.svg'
 
 const linksData = ref<string[]>(['collections', 'men', 'women', 'about', 'contact'])
 const emptyCart: Ref<boolean> = ref(false)
-const isOpen = ref<boolean>(false)
 const navRef = ref(null)
-const zIndexStatus = ref<boolean>(false)
+
 const amount = inject<Ref<number>>('amount')
+const isOpen = inject<Ref<boolean>>('isOpen')
+const zIndexStatus = inject<Ref<boolean>>('zIndexStatus')
+
 const handleMenu = (): void => {
 	if (isOpen.value) {
 		isOpen.value = false
@@ -115,6 +117,7 @@ const handleClickOutside = (e: Event): void => {
 }
 
 onMounted(() => {
+	console.log('ddd');
 	document.addEventListener('click', handleClickOutside)
 })
 
