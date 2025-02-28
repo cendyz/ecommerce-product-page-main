@@ -6,6 +6,7 @@
 				perPage: 1,
 				interval: 2500,
 				rewind: true,
+				autoplay: true,
 			}"
 			aria-label="My Favorite Images">
 			<SplideSlide v-for="(item, index) in imgData" :key="index">
