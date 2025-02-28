@@ -16,8 +16,6 @@ provide('amount', amount)
 provide('isOpen', isOpen)
 provide('zIndexStatus', zIndexStatus)
 provide('carAmount', carAmount)
-
-
 </script>
 
 <style lang="scss">

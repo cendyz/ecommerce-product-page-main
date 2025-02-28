@@ -25,11 +25,11 @@
 					</li>
 				</ul>
 			</div>
-			<div class="flex gap-x-[1.7rem]">
+			<div class="flex gap-x-[1.7rem] xl:gap-x-[4rem] xl:mr-[6rem]">
 				<div class="dropdown dropdown-end">
-					<div tabindex="0" role="button" class="btn btn-ghost btn-circle" @click="handleCart">
+					<div tabindex="0" role="button" class="btn btn-ghost btn-circle no-animation">
 						<div class="indicator">
-							<img :src="cart" alt="" cart />
+							<img :src="cart" alt="cart icon" class="xl:w-[3rem]" @click="handleCart" />
 							<span
 								class="badge badge-lg indicator-item z-[0] border-none text-white"
 								:class="{
@@ -38,12 +38,15 @@
 								}"
 								>{{ carAmount }}</span
 							>
+
+							<Cart class="hidden xl:block" :emptyCart="emptyCart" @cleanCart="carAmount = $event"></Cart>
 						</div>
 					</div>
 				</div>
 				<div class="dropdown dropdown-end">
-					<div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
-						<div class="w-full rounded-full">
+					<div tabindex="0" role="button" class="btn btn-ghost ghostBtn btn-circle avatar xl:w-[5.5rem]">
+						<div
+							class="w-full avatarBorder rounded-full xl:border-[2px] xl:border-transparent xl:hover:border-orange-100">
 							<img alt="your avatar" :src="avatar" />
 						</div>
 					</div>
@@ -55,29 +58,7 @@
 			class="bg-black absolute w-full h-full top-0 left-0 transition-opacity duration-200"
 			@click="checkE"
 			:class="[isOpen ? 'z-10 opacity-[.75]' : 'opacity-0', zIndexStatus && 'z-[-10]']"></div>
-		<Transition mode="out-in">
-			<div v-if="emptyCart" class="absolute top-[9.5%] w-[97%] left-1/2 translate-x-[-50%] bg-white rounded-lg z-[11]">
-				<p class="font-k700 p-[2.2rem] pb-[2.5rem] border-b-[1px]">Cart</p>
-				<p v-show="carAmount === 0" class="text-center font-k700 text-blue-200 py-[11rem]">Your cart is Empty.</p>
-				<div v-show="carAmount > 0" class="p-[2.2rem]">
-					<div class="flex items-center justify-between">
-						<img :src="thumbCart" alt="product icon" class="w-[5rem] rounded-lg" />
-						<div class="text-gray-500">
-							<p>Fall Limited Ediion Sneakers</p>
-							<p>
-								$125.00 x {{ carAmount }}
-								<span class="text-black font-k700 ml-[0.2rem]">${{ (125 * carAmount).toFixed(2) }}</span>
-							</p>
-						</div>
-						<img :src="trash" alt="delete icon" class="block" @click="carAmount = 0" />
-					</div>
-					<button
-						class="btn btnCheckout no-animation btn-block text-[1.6rem] mt-[2.2rem] py-[2.5rem] font-k700 leading-[0] bg-orange-100 rounded-2xl">
-						Checkout
-					</button>
-				</div>
-			</div>
-		</Transition>
+		<Cart class="xl:hidden" :emptyCart="emptyCart"></Cart>
 	</nav>
 </template>
 
@@ -88,15 +69,14 @@ import burgir from '@/images/icon-menu.svg'
 import cart from '@/images/icon-cart.svg'
 import avatar from '@/images/image-avatar.png'
 import closeMenu from '@/images/icon-close.svg'
-import thumbCart from '@/images/image-product-1-thumbnail.jpg'
-import trash from '@/images/icon-delete.svg'
+import Cart from './utils/Cart.vue'
 
 const linksData = ref<string[]>(['collections', 'men', 'women', 'about', 'contact'])
 const emptyCart: Ref<boolean> = ref(false)
 const navRef = ref(null)
-const carAmount = inject<Ref<number>>('carAmount')
 const isOpen = inject<Ref<boolean>>('isOpen')
 const zIndexStatus = inject<Ref<boolean>>('zIndexStatus')
+const carAmount = inject<Ref<number>>('carAmount')
 
 const handleMenu = (): void => {
 	if (isOpen.value) {
@@ -126,10 +106,9 @@ const handleCart = (): void => {
 </script>
 
 <style scoped lang="scss">
-.btnCheckout {
+.btn-ghost {
 	&:hover {
-		background-color: hsl(26, 100%, 55%);
-		border-color: white;
+		background-color: white;
 	}
 }
 
@@ -139,7 +118,7 @@ const handleCart = (): void => {
 	&::before {
 		content: '';
 		position: absolute;
-		bottom: -4.65rem;
+		bottom: -5.9rem;
 		left: 50%;
 		transform: translateX(-50%);
 		width: 0%;
@@ -152,6 +131,16 @@ const handleCart = (): void => {
 		&::before {
 			width: 100%;
 		}
+	}
+}
+
+.avatarBorder {
+	transition: border-color 0.2s;
+}
+
+.ghostBtn {
+	&:hover {
+		background-color: white;
 	}
 }
 
