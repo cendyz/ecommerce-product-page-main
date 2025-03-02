@@ -1,5 +1,5 @@
 <template>
-	<nav ref="navRef" class="container">
+	<nav class="container">
 		<div
 			class="absolute w-[60%] h-[100%] bg-white left-0 p-[1rem] pt-[9rem] transition-transform z-20 duration-300"
 			:class="isOpen ? 'translate-x-0' : 'translate-x-[-100%]'">
@@ -27,7 +27,7 @@
 			</div>
 			<div class="flex gap-x-[1.7rem] xl:gap-x-[4rem] xl:mr-[6rem]">
 				<div class="dropdown dropdown-end">
-					<div tabindex="0" role="button" class="btn btn-ghost btn-circle no-animation">
+					<div tabindex="0" role="button" class="btn btn-ghost btn-circle no-animation" ref="cartRef">
 						<div class="indicator">
 							<img :src="cart" alt="cart icon" class="xl:w-[3rem]" @click="handleCart" />
 							<span
@@ -63,7 +63,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, Ref, inject } from 'vue'
+import { ref, Ref, inject, onMounted, onUnmounted } from 'vue'
 import logo from '@/images/logo.svg'
 import burgir from '@/images/icon-menu.svg'
 import cart from '@/images/icon-cart.svg'
@@ -73,10 +73,10 @@ import Cart from './utils/Cart.vue'
 
 const linksData = ref<string[]>(['collections', 'men', 'women', 'about', 'contact'])
 const emptyCart: Ref<boolean> = ref(false)
-const navRef = ref(null)
 const isOpen = inject<Ref<boolean>>('isOpen')
 const zIndexStatus = inject<Ref<boolean>>('zIndexStatus')
 const carAmount = inject<Ref<number>>('carAmount')
+const cartRef: Ref<HTMLElement | null> = ref()
 
 const handleMenu = (): void => {
 	if (isOpen.value) {
@@ -103,6 +103,16 @@ const checkE = (e: Event): void => {
 const handleCart = (): void => {
 	emptyCart.value = !emptyCart.value
 }
+
+const handleClickOutside = (e: Event): void => {
+	if (!cartRef.value.contains(e.target as Node)) {
+		emptyCart.value = false
+	}
+}
+
+onMounted(() => {
+	document.addEventListener('click', handleClickOutside)
+})
 </script>
 
 <style scoped lang="scss">

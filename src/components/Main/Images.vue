@@ -1,5 +1,5 @@
 <template>
-	<section>
+	<section class="xl:hidden">
 		<Splide
 			:options="{
 				type: 'loop',
@@ -16,6 +16,14 @@
 					:class="{ 'brightness-[65%]': isOpen, 'brightness-100': !isOpen }" />
 			</SplideSlide>
 		</Splide>
+	</section>
+	<section class="hidden xl:block w-[50%]">
+		<img :src="product1" alt="product icon" class="w-[65rem] rounded-[2rem]" />
+		<div class="flex justify-between mt-[3rem]">
+			<div v-for="(item, index) in imgData" :key="index" class="border-[3px] border-orange-100 rounded-[1.8rem]">
+				<img :src="item" alt="Product icon" class="w-[10rem] rounded-[1.5rem] cursor-pointer" />
+			</div>
+		</div>
 	</section>
 </template>
 
