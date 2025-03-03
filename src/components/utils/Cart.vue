@@ -3,8 +3,13 @@
 		<div
 			v-if="props.emptyCart"
 			class="absolute top-[9.5%] w-[97%] left-1/2 translate-x-[-50%] bg-white rounded-lg z-[11] xl:top-[200%] xl:w-[40rem] boxShadow">
-			<p class="font-k700 p-[2.2rem] pb-[2.5rem] border-b-[1px] xl:text-[1.8rem] xl:text-left xl:p-[3rem] cursor-default">Cart</p>
-			<p v-show="carAmount === 0" class="text-center font-k700 text-blue-200 py-[11rem] xl:text-[1.8rem] cursor-default">
+			<p
+				class="font-k700 p-[2.2rem] pb-[2.5rem] border-b-[1px] xl:text-[1.8rem] xl:text-left xl:p-[3rem] cursor-default">
+				Cart
+			</p>
+			<p
+				v-show="carAmount === 0"
+				class="text-center font-k700 text-blue-200 py-[11rem] xl:text-[1.8rem] cursor-default">
 				Your cart is Empty.
 			</p>
 			<div v-show="carAmount > 0" class="p-[2.2rem] xl:p-[3rem] cursor-default">
@@ -17,10 +22,14 @@
 							<span class="text-black font-k700 ml-[0.2rem]">${{ (125 * carAmount).toFixed(2) }}</span>
 						</p>
 					</div>
-					<img :src="trash" alt="delete icon" class="block xl:w-[1.8rem] cursor-pointer" @click="emits('cleanCart', 0)" />
+					<img
+						:src="trash"
+						alt="delete icon"
+						class="block xl:w-[1.8rem] cursor-pointer"
+						@click="emits('cleanCart', 0)" />
 				</div>
 				<button
-					class="btn btnCheckout no-animation btn-block text-[1.6rem] mt-[2.2rem] py-[2.5rem] font-k700 leading-[0] bg-orange-100 rounded-2xl xl:py-[3rem]">
+					class="btn btnCheckout no-animation btn-block text-[1.6rem] mt-[2.2rem] py-[2.5rem] font-k700 leading-[0] bg-orange-100 rounded-2xl xl:py-[3rem] hover:bg-orange-400">
 					Checkout
 				</button>
 			</div>
@@ -42,13 +51,6 @@ const emits = defineEmits(['cleanCart'])
 </script>
 
 <style scoped lang="scss">
-.btnCheckout {
-	&:hover {
-		background-color: hsl(26, 100%, 55%);
-		border-color: white;
-	}
-}
-
 @media (min-width: 1280px) {
 	.boxShadow {
 		box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;

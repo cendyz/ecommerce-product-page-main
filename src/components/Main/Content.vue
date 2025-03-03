@@ -16,14 +16,14 @@
 			<p class="text-blue-200 text-[1.3rem] font-k700 tracking-wide line-through">$250.00</p>
 		</div>
 		<div class="xl:flex xl:items-center xl:justify-between xl:w-full xl:mt-[3rem]">
-			<div class="flex justify-between items-center mt-[2rem] rounded-lg bg-blue-400 xl:mt-0">
-				<button class="p-[1.7rem]" @click="decreaseAmount"><img :src="minus" alt="minus icon" /></button>
-				<p class="font-k700 xl:px-[2rem]">{{ amount }}</p>
+			<div class="flex justify-between items-center mt-[2rem] rounded-lg bg-blue-400 xl:mt-0 xl:w-[14rem]">
+				<button class="p-[1.7rem] xl:w-[5rem]" @click="decreaseAmount"><img :src="minus" alt="minus icon" /></button>
+				<p class="font-k700 xl:px-[2rem] xl:w-[5rem]">{{ amount }}</p>
 				<button class="p-[1.7rem]" @click="amount++"><img :src="plus" alt="plus icon" /></button>
 			</div>
 			<button
 				@click="checkE"
-				class="mt-[1.1rem] rounded-2xl btn no-animation bg-orange-100 text-[1.5rem] btn-block h-[4.6rem] leading-[0] hover:bg-orange-100 xl:mt-0 xl:w-[67%] xl:h-[5.2rem]">
+				class="mt-[1.1rem] rounded-2xl btn no-animation bg-orange-100 text-[1.5rem] btn-block h-[4.6rem] leading-[0] hover:bg-orange-400 xl:mt-0 xl:w-[67%] xl:h-[5.2rem]">
 				<img :src="cartIcon" alt="cart icon" class="cartIcon" /> Add to cart
 			</button>
 		</div>
@@ -31,7 +31,7 @@
 </template>
 
 <script setup lang="ts">
-import { Ref, inject } from 'vue'
+import { Ref, inject, ref } from 'vue'
 import plus from '@/images/icon-plus.svg'
 import minus from '@/images/icon-minus.svg'
 import cartIcon from '@/images/icon-cart.svg'

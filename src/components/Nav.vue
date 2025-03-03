@@ -29,7 +29,7 @@
 				<div class="dropdown dropdown-end">
 					<div tabindex="0" role="button" class="btn btn-ghost btn-circle no-animation" ref="cartRef">
 						<div class="indicator">
-							<img :src="cart" alt="cart icon" class="xl:w-[3rem]" @click="handleCart" />
+							<img :src="cart" alt="cart icon" class="xl:w-[3rem] cartImg hover:brightness-0" @click="handleCart" />
 							<span
 								class="badge badge-lg indicator-item z-[0] border-none text-white"
 								:class="{
@@ -63,7 +63,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, Ref, inject, onMounted, onUnmounted } from 'vue'
+import { ref, Ref, inject, onMounted } from 'vue'
 import logo from '@/images/logo.svg'
 import burgir from '@/images/icon-menu.svg'
 import cart from '@/images/icon-cart.svg'
@@ -195,5 +195,9 @@ onMounted(() => {
 	to {
 		opacity: 0;
 	}
+}
+
+.cartImg {
+	transition: filter .2s;
 }
 </style>
