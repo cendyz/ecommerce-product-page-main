@@ -148,7 +148,7 @@ function __VLS_template() {
                 var $event = _a[0];
                 ;
                 (__VLS_ctx.actualImage = item), (__VLS_ctx.openedIndex = index);
-            } }, { src: ((item)), alt: ("Product icon") }), { class: ("w-[13rem] rounded-[1.5rem] cursor-pointer hover:opacity-30 transition-opacity duration-300") }), { class: (({ 'opacity-30': item === __VLS_ctx.actualImage })) }));
+            } }, { src: ((item)), alt: ("Product icon") }), { class: ("w-[10rem] max-w-[10rem] rounded-[1.5rem] cursor-pointer hover:opacity-30 transition-opacity duration-300") }), { class: (({ 'opacity-30': item === __VLS_ctx.actualImage })) }));
     };
     for (var _c = 0, _d = __VLS_getVForSourceType((__VLS_ctx.imgData)); _c < _d.length; _c++) {
         var _e = _d[_c], item = _e[0], index = _e[1];
@@ -201,7 +201,7 @@ function __VLS_template() {
                 __VLS_ctx.isOpenImages = false;
             } }, { class: ("absolute top-0 left-0 w-full h-full bg-black opacity-70 z-[20]") }));
     }
-    ['xl:hidden', 'w-full', 'transition-all', 'duration-[400ms]', 'brightness-[65%]', 'brightness-100', 'hidden', 'xl:block', 'w-[50%]', 'w-[65rem]', 'rounded-[2rem]', 'cursor-pointer', 'flex', 'justify-between', 'mt-[3rem]', 'border-[3px]', 'rounded-[1.8rem]', 'w-[13rem]', 'rounded-[1.5rem]', 'cursor-pointer', 'hover:opacity-30', 'transition-opacity', 'duration-300', 'opacity-30', 'absolute', 'top-1/2', 'left-1/2', 'translate-x-[-50%]', 'translate-y-[-50%]', 'z-30', 'scale-[1.2]', 'brightness-[2.1]', 'w-[2rem]', 'block', 'mb-[1rem]', 'ml-auto', 'cursor-pointer', 'relative', 'left-[96.5%]', 'w-[63rem]', 'rounded-[1.3rem]', 'flex', 'justify-center', 'gap-x-[1.7rem]', 'mt-[3rem]', 'bg-white', 'border-[2px]', 'rounded-[1.3rem]', 'z-[20]', 'overflow-hidden', 'w-[8rem]', 'cursor-pointer', 'hover:opacity-30', 'transition-opacity', 'duration-300', 'opacity-30', 'absolute', 'top-0', 'left-0', 'w-full', 'h-full', 'bg-black', 'opacity-70', 'z-[20]',];
+    ['xl:hidden', 'w-full', 'transition-all', 'duration-[400ms]', 'brightness-[65%]', 'brightness-100', 'hidden', 'xl:block', 'w-[50%]', 'w-[65rem]', 'rounded-[2rem]', 'cursor-pointer', 'flex', 'justify-between', 'mt-[3rem]', 'border-[3px]', 'rounded-[1.8rem]', 'w-[10rem]', 'max-w-[10rem]', 'rounded-[1.5rem]', 'cursor-pointer', 'hover:opacity-30', 'transition-opacity', 'duration-300', 'opacity-30', 'absolute', 'top-1/2', 'left-1/2', 'translate-x-[-50%]', 'translate-y-[-50%]', 'z-30', 'scale-[1.2]', 'brightness-[2.1]', 'w-[2rem]', 'block', 'mb-[1rem]', 'ml-auto', 'cursor-pointer', 'relative', 'left-[96.5%]', 'w-[63rem]', 'rounded-[1.3rem]', 'flex', 'justify-center', 'gap-x-[1.7rem]', 'mt-[3rem]', 'bg-white', 'border-[2px]', 'rounded-[1.3rem]', 'z-[20]', 'overflow-hidden', 'w-[8rem]', 'cursor-pointer', 'hover:opacity-30', 'transition-opacity', 'duration-300', 'opacity-30', 'absolute', 'top-0', 'left-0', 'w-full', 'h-full', 'bg-black', 'opacity-70', 'z-[20]',];
     var __VLS_slots;
     var $slots;
     var __VLS_inheritedAttrs;

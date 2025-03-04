@@ -32,7 +32,7 @@
 				<img
 					:src="item"
 					alt="Product icon"
-					class="w-[13rem] rounded-[1.5rem] cursor-pointer hover:opacity-30 transition-opacity duration-300"
+					class="w-[10rem] max-w-[10rem] rounded-[1.5rem] cursor-pointer hover:opacity-30 transition-opacity duration-300"
 					@click=";(actualImage = item), (openedIndex = index)"
 					:class="{ 'opacity-30': item === actualImage }" />
 			</div>
