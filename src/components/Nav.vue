@@ -1,5 +1,5 @@
 <template>
-	<nav class="container">
+	<nav class="container" ref="cartRef">
 		<div
 			class="absolute w-[60%] h-[100%] bg-white left-0 p-[1rem] pt-[9rem] transition-transform z-20 duration-300"
 			:class="isOpen ? 'translate-x-0' : 'translate-x-[-100%]'">
@@ -9,7 +9,7 @@
 				</li>
 			</ul>
 		</div>
-		<div class="navbar bg-base-100 p-[2rem] z-[5] bg-transparent xl:p-[4rem] xl:px-0 border-b-2 border-gray-100">
+		<div class="navbar bg-base-100 p-[2rem] z-[5] bg-transparent xl:p-[4rem] xl:px-0 border-b-2 border-gray-100" >
 			<div class="flex-1 gap-x-[2rem]">
 				<Transition mode="out-in" class="xl:hidden">
 					<img :src="burgir" alt="menu icon" class="block z-[100] w-[1.7rem]" @click="handleMenu" v-if="!isOpen" />
@@ -58,7 +58,7 @@
 			class="bg-black absolute w-full h-full top-0 left-0 transition-opacity duration-200"
 			@click="checkE"
 			:class="[isOpen ? 'z-10 opacity-[.75]' : 'opacity-0', zIndexStatus && 'z-[-10]']"></div>
-		<Cart class="xl:hidden" :emptyCart="emptyCart"></Cart>
+		<Cart class="xl:hidden" :emptyCart="emptyCart" @cleanCart="carAmount = $event"></Cart>
 	</nav>
 </template>
 
@@ -105,7 +105,7 @@ const handleCart = (): void => {
 }
 
 const handleClickOutside = (e: Event): void => {
-	if (!cartRef.value.contains(e.target as Node)) {
+	if (cartRef.value && !cartRef.value.contains(e.target as Node)) {
 		emptyCart.value = false
 	}
 }
@@ -198,6 +198,6 @@ onMounted(() => {
 }
 
 .cartImg {
-	transition: filter .2s;
+	transition: filter 0.2s;
 }
 </style>
