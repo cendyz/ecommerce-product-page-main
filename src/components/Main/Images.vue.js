@@ -165,14 +165,14 @@ function __VLS_template() {
                 if (!((__VLS_ctx.isOpenImages)))
                     return;
                 __VLS_ctx.isOpenImages = false;
-            } }, { src: ((__VLS_ctx.close)), alt: ("close") }), { class: ("brightness-[2.1] scale-[1.4] block mb-[1rem] ml-auto cursor-pointer") }));
+            } }, { src: ((__VLS_ctx.close)), alt: ("close") }), { class: ("brightness-[2.1] w-[2rem] block mb-[1rem] ml-auto cursor-pointer") }));
         __VLS_elementAsFunction(__VLS_intrinsicElements.div, __VLS_intrinsicElements.div)(__assign({ class: ("relative") }));
         __VLS_elementAsFunction(__VLS_intrinsicElements.img)(__assign(__assign(__assign({ onClick: (__VLS_ctx.plusIndex) }, { src: ((__VLS_ctx.nextArrow)), alt: ("next") }), { class: ((__VLS_ctx.arrowStyles)) }), { class: ("left-[96.5%]") }));
         __VLS_elementAsFunction(__VLS_intrinsicElements.img)(__assign(__assign({ onClick: (__VLS_ctx.minusIndex) }, { src: ((__VLS_ctx.previousArrow)), alt: ("previous") }), { class: ((__VLS_ctx.arrowStyles)) }));
-        __VLS_elementAsFunction(__VLS_intrinsicElements.img)(__assign({ src: ((__VLS_ctx.openedImgData[__VLS_ctx.openedIndex])), alt: ("product icon") }, { class: ("w-[63rem] rounded-[2rem]") }));
+        __VLS_elementAsFunction(__VLS_intrinsicElements.img)(__assign({ src: ((__VLS_ctx.openedImgData[__VLS_ctx.openedIndex])), alt: ("product icon") }, { class: ("w-[63rem] rounded-[1.3rem]") }));
         __VLS_elementAsFunction(__VLS_intrinsicElements.div, __VLS_intrinsicElements.div)(__assign({ class: ("flex justify-center gap-x-[1.7rem] mt-[3rem]") }));
         var _loop_2 = function (item, index) {
-            __VLS_elementAsFunction(__VLS_intrinsicElements.div, __VLS_intrinsicElements.div)(__assign(__assign({ key: ((index)) }, { class: ("borderBorder border-[3px] rounded-[1.3rem] z-[20]") }), { class: (([__VLS_ctx.openedIndex === index ? 'border-orange-100' : 'border-transparent'])) }));
+            __VLS_elementAsFunction(__VLS_intrinsicElements.div, __VLS_intrinsicElements.div)(__assign(__assign({ key: ((index)) }, { class: ("bg-white border-[2px] rounded-[1.3rem] z-[20] overflow-hidden") }), { class: (([__VLS_ctx.openedIndex === index ? 'border-orange-100' : 'border-transparent'])) }));
             __VLS_elementAsFunction(__VLS_intrinsicElements.img)(__assign(__assign(__assign({ onClick: function () {
                     var _a = [];
                     for (var _i = 0; _i < arguments.length; _i++) {
@@ -182,7 +182,7 @@ function __VLS_template() {
                     if (!((__VLS_ctx.isOpenImages)))
                         return;
                     __VLS_ctx.openedIndex = index;
-                } }, { src: ((item)), alt: ("Product icon") }), { class: ("w-[8rem] bg-white cursor-pointer hover:opacity-30 transition-opacity duration-300") }), { class: (({ 'opacity-30': __VLS_ctx.openedIndex === index })) }));
+                } }, { src: ((item)), alt: ("Product icon") }), { class: ("w-[8rem] cursor-pointer hover:opacity-30 transition-opacity duration-300") }), { class: (({ 'opacity-30': __VLS_ctx.openedIndex === index })) }));
         };
         for (var _f = 0, _g = __VLS_getVForSourceType((__VLS_ctx.openedImgData)); _f < _g.length; _f++) {
             var _h = _g[_f], item = _h[0], index = _h[1];
@@ -201,7 +201,7 @@ function __VLS_template() {
                 __VLS_ctx.isOpenImages = false;
             } }, { class: ("absolute top-0 left-0 w-full h-full bg-black opacity-70 z-[20]") }));
     }
-    ['xl:hidden', 'w-full', 'transition-all', 'duration-[400ms]', 'brightness-[65%]', 'brightness-100', 'hidden', 'xl:block', 'w-[50%]', 'w-[65rem]', 'rounded-[2rem]', 'cursor-pointer', 'flex', 'justify-between', 'mt-[3rem]', 'border-[3px]', 'rounded-[1.8rem]', 'w-[13rem]', 'rounded-[1.5rem]', 'cursor-pointer', 'hover:opacity-30', 'transition-opacity', 'duration-300', 'opacity-30', 'absolute', 'top-1/2', 'left-1/2', 'translate-x-[-50%]', 'translate-y-[-50%]', 'z-30', 'scale-[1.2]', 'brightness-[2.1]', 'scale-[1.4]', 'block', 'mb-[1rem]', 'ml-auto', 'cursor-pointer', 'relative', 'left-[96.5%]', 'w-[63rem]', 'rounded-[2rem]', 'flex', 'justify-center', 'gap-x-[1.7rem]', 'mt-[3rem]', 'borderBorder', 'border-[3px]', 'rounded-[1.3rem]', 'z-[20]', 'w-[8rem]', 'bg-white', 'cursor-pointer', 'hover:opacity-30', 'transition-opacity', 'duration-300', 'opacity-30', 'absolute', 'top-0', 'left-0', 'w-full', 'h-full', 'bg-black', 'opacity-70', 'z-[20]',];
+    ['xl:hidden', 'w-full', 'transition-all', 'duration-[400ms]', 'brightness-[65%]', 'brightness-100', 'hidden', 'xl:block', 'w-[50%]', 'w-[65rem]', 'rounded-[2rem]', 'cursor-pointer', 'flex', 'justify-between', 'mt-[3rem]', 'border-[3px]', 'rounded-[1.8rem]', 'w-[13rem]', 'rounded-[1.5rem]', 'cursor-pointer', 'hover:opacity-30', 'transition-opacity', 'duration-300', 'opacity-30', 'absolute', 'top-1/2', 'left-1/2', 'translate-x-[-50%]', 'translate-y-[-50%]', 'z-30', 'scale-[1.2]', 'brightness-[2.1]', 'w-[2rem]', 'block', 'mb-[1rem]', 'ml-auto', 'cursor-pointer', 'relative', 'left-[96.5%]', 'w-[63rem]', 'rounded-[1.3rem]', 'flex', 'justify-center', 'gap-x-[1.7rem]', 'mt-[3rem]', 'bg-white', 'border-[2px]', 'rounded-[1.3rem]', 'z-[20]', 'overflow-hidden', 'w-[8rem]', 'cursor-pointer', 'hover:opacity-30', 'transition-opacity', 'duration-300', 'opacity-30', 'absolute', 'top-0', 'left-0', 'w-full', 'h-full', 'bg-black', 'opacity-70', 'z-[20]',];
     var __VLS_slots;
     var $slots;
     var __VLS_inheritedAttrs;

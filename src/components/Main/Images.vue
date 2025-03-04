@@ -41,22 +41,22 @@
 			<img
 				:src="close"
 				alt="close"
-				class="brightness-[2.1] scale-[1.4] block mb-[1rem] ml-auto cursor-pointer"
+				class="brightness-[2.1] w-[2rem] block mb-[1rem] ml-auto cursor-pointer"
 				@click="isOpenImages = false" />
 			<div class="relative">
 				<img :src="nextArrow" alt="next" :class="arrowStyles" class="left-[96.5%]" @click="plusIndex" />
 				<img :src="previousArrow" alt="previous" :class="arrowStyles" @click="minusIndex" />
-				<img :src="openedImgData[openedIndex]" alt="product icon" class="w-[63rem] rounded-[2rem]" />
+				<img :src="openedImgData[openedIndex]" alt="product icon" class="w-[63rem] rounded-[1.3rem]" />
 				<div class="flex justify-center gap-x-[1.7rem] mt-[3rem]">
 					<div
 						v-for="(item, index) in openedImgData"
 						:key="index"
-						class="borderBorder border-[3px] rounded-[1.3rem] z-[20]"
+						class="bg-white border-[2px] rounded-[1.3rem] z-[20] overflow-hidden"
 						:class="[openedIndex === index ? 'border-orange-100' : 'border-transparent']">
 						<img
 							:src="item"
 							alt="Product icon"
-							class="w-[8rem] bg-white cursor-pointer hover:opacity-30 transition-opacity duration-300"
+							class="w-[8rem] cursor-pointer hover:opacity-30 transition-opacity duration-300"
 							@click="openedIndex = index"
 							:class="{ 'opacity-30': openedIndex === index }" />
 					</div>
@@ -132,21 +132,5 @@ const minusIndex = (): void => {
 
 .splide__arrow:hover:not(:disabled) {
 	opacity: 1;
-}
-
-.borderBorder {
-	position: relative;
-	overflow: hidden;
-
-	&::before {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		background-color: white;
-		z-index: -1;
-	}
 }
 </style>
