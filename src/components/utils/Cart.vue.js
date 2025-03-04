@@ -94,8 +94,8 @@ function __VLS_template() {
                 if (!((props.emptyCart)))
                     return;
                 __VLS_ctx.emits('cleanCart', 0);
-            } }, { src: ((__VLS_ctx.trash)), alt: ("delete icon") }), { class: ("block xl:w-[1.8rem] cursor-pointer") }));
-        __VLS_elementAsFunction(__VLS_intrinsicElements.button, __VLS_intrinsicElements.button)(__assign({ class: ("btn btnCheckout no-animation btn-block text-[1.6rem] mt-[2.2rem] py-[2.5rem] font-k700 leading-[0] bg-orange-100 rounded-2xl xl:py-[3rem] hover:bg-orange-400") }));
+            } }, { src: ((__VLS_ctx.trash)), alt: ("delete items") }), { class: ("block xl:w-[1.8rem] cursor-pointer") }));
+        __VLS_elementAsFunction(__VLS_intrinsicElements.button, __VLS_intrinsicElements.button)(__assign({ type: ("button") }, { class: ("btn btnCheckout no-animation btn-block text-[1.6rem] mt-[2.2rem] py-[2.5rem] font-k700 leading-[0] bg-orange-100 rounded-2xl xl:py-[3rem] hover:bg-orange-400") }));
     }
     __VLS_5.slots.default;
     var __VLS_5;

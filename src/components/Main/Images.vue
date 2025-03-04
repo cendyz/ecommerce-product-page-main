@@ -10,7 +10,7 @@
 			}"
 			aria-label="My Favorite Images">
 			<SplideSlide v-for="(item, index) in imgData" :key="index">
-				<img
+				<img alt="product image"
 					:src="item"
 					class="w-full transition-all duration-[400ms]"
 					:class="{ 'brightness-[65%]': isOpen, 'brightness-100': !isOpen }" />
@@ -20,7 +20,7 @@
 	<section class="hidden xl:block w-[50%]">
 		<img
 			:src="actualImage"
-			alt="product icon"
+			alt="product image"
 			class="w-[65rem] rounded-[2rem] cursor-pointer"
 			@click=";(isOpenImages = true), (openedImage = actualImage)" />
 		<div class="flex justify-between mt-[3rem]">
@@ -31,7 +31,7 @@
 				:class="[actualImage === item ? 'border-orange-100' : 'border-transparent']">
 				<img
 					:src="item"
-					alt="Product icon"
+					alt="product image"
 					class="w-[10rem] max-w-[10rem] rounded-[1.5rem] cursor-pointer hover:opacity-30 transition-opacity duration-300"
 					@click=";(actualImage = item), (openedIndex = index)"
 					:class="{ 'opacity-30': item === actualImage }" />

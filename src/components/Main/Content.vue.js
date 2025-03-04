@@ -71,21 +71,21 @@ function __VLS_template() {
     __VLS_elementAsFunction(__VLS_intrinsicElements.p, __VLS_intrinsicElements.p)(__assign({ class: ("text-blue-200 text-[1.3rem] font-k700 tracking-wide line-through") }));
     __VLS_elementAsFunction(__VLS_intrinsicElements.div, __VLS_intrinsicElements.div)(__assign({ class: ("xl:flex xl:items-center xl:justify-between xl:w-full xl:mt-[3rem]") }));
     __VLS_elementAsFunction(__VLS_intrinsicElements.div, __VLS_intrinsicElements.div)(__assign({ class: ("flex justify-between items-center mt-[2rem] rounded-lg bg-blue-400 xl:mt-0 xl:w-[14rem]") }));
-    __VLS_elementAsFunction(__VLS_intrinsicElements.button, __VLS_intrinsicElements.button)(__assign({ onClick: (__VLS_ctx.decreaseAmount) }, { class: ("p-[1.7rem] xl:w-[5rem]") }));
+    __VLS_elementAsFunction(__VLS_intrinsicElements.button, __VLS_intrinsicElements.button)(__assign(__assign({ onClick: (__VLS_ctx.decreaseAmount) }, { type: ("button") }), { class: ("p-[1.7rem] xl:w-[5rem]") }));
     __VLS_elementAsFunction(__VLS_intrinsicElements.img)({
         src: ((__VLS_ctx.minus)),
         alt: ("minus icon"),
     });
     __VLS_elementAsFunction(__VLS_intrinsicElements.p, __VLS_intrinsicElements.p)(__assign({ class: ("font-k700 xl:px-[2rem] xl:w-[5rem]") }));
     (__VLS_ctx.amount);
-    __VLS_elementAsFunction(__VLS_intrinsicElements.button, __VLS_intrinsicElements.button)(__assign({ onClick: function () {
+    __VLS_elementAsFunction(__VLS_intrinsicElements.button, __VLS_intrinsicElements.button)(__assign(__assign({ onClick: function () {
             var _a = [];
             for (var _i = 0; _i < arguments.length; _i++) {
                 _a[_i] = arguments[_i];
             }
             var $event = _a[0];
             __VLS_ctx.amount++;
-        } }, { class: ("p-[1.7rem]") }));
+        } }, { type: ("button") }), { class: ("p-[1.7rem]") }));
     __VLS_elementAsFunction(__VLS_intrinsicElements.img)({
         src: ((__VLS_ctx.plus)),
         alt: ("plus icon"),

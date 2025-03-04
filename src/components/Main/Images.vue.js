@@ -121,7 +121,7 @@ function __VLS_template() {
         var __VLS_8 = __VLS_7.apply(void 0, __spreadArray([{
                 key: ((index)),
             }], __VLS_functionalComponentArgsRest(__VLS_7), false));
-        __VLS_elementAsFunction(__VLS_intrinsicElements.img)(__assign(__assign({ src: ((item)) }, { class: ("w-full transition-all duration-[400ms]") }), { class: (({ 'brightness-[65%]': __VLS_ctx.isOpen, 'brightness-100': !__VLS_ctx.isOpen })) }));
+        __VLS_elementAsFunction(__VLS_intrinsicElements.img)(__assign(__assign({ alt: ("product image"), src: ((item)) }, { class: ("w-full transition-all duration-[400ms]") }), { class: (({ 'brightness-[65%]': __VLS_ctx.isOpen, 'brightness-100': !__VLS_ctx.isOpen })) }));
         __VLS_11.slots.default;
         var __VLS_11;
     }
@@ -136,7 +136,7 @@ function __VLS_template() {
             var $event = _a[0];
             ;
             (__VLS_ctx.isOpenImages = true), (__VLS_ctx.openedImage = __VLS_ctx.actualImage);
-        } }, { src: ((__VLS_ctx.actualImage)), alt: ("product icon") }), { class: ("w-[65rem] rounded-[2rem] cursor-pointer") }));
+        } }, { src: ((__VLS_ctx.actualImage)), alt: ("product image") }), { class: ("w-[65rem] rounded-[2rem] cursor-pointer") }));
     __VLS_elementAsFunction(__VLS_intrinsicElements.div, __VLS_intrinsicElements.div)(__assign({ class: ("flex justify-between mt-[3rem]") }));
     var _loop_1 = function (item, index) {
         __VLS_elementAsFunction(__VLS_intrinsicElements.div, __VLS_intrinsicElements.div)(__assign(__assign({ key: ((index)) }, { class: ("border-[3px] rounded-[1.8rem]") }), { class: (([__VLS_ctx.actualImage === item ? 'border-orange-100' : 'border-transparent'])) }));
@@ -148,7 +148,7 @@ function __VLS_template() {
                 var $event = _a[0];
                 ;
                 (__VLS_ctx.actualImage = item), (__VLS_ctx.openedIndex = index);
-            } }, { src: ((item)), alt: ("Product icon") }), { class: ("w-[10rem] max-w-[10rem] rounded-[1.5rem] cursor-pointer hover:opacity-30 transition-opacity duration-300") }), { class: (({ 'opacity-30': item === __VLS_ctx.actualImage })) }));
+            } }, { src: ((item)), alt: ("product image") }), { class: ("w-[10rem] max-w-[10rem] rounded-[1.5rem] cursor-pointer hover:opacity-30 transition-opacity duration-300") }), { class: (({ 'opacity-30': item === __VLS_ctx.actualImage })) }));
     };
     for (var _c = 0, _d = __VLS_getVForSourceType((__VLS_ctx.imgData)); _c < _d.length; _c++) {
         var _e = _d[_c], item = _e[0], index = _e[1];

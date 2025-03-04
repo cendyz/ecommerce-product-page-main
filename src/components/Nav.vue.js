@@ -107,7 +107,7 @@ function __VLS_template() {
         __VLS_elementAsFunction(__VLS_intrinsicElements.li, __VLS_intrinsicElements.li)({
             key: ((index)),
         });
-        __VLS_elementAsFunction(__VLS_intrinsicElements.a, __VLS_intrinsicElements.a)(__assign({ class: ("capitalize text-[1.6rem] font-bold p-0 text-blue-100") }));
+        __VLS_elementAsFunction(__VLS_intrinsicElements.a, __VLS_intrinsicElements.a)(__assign({ class: ("capitalize text-[1.6rem] font-bold p-0 text-blue-100") }, { href: ("#") }));
         (item);
     }
     __VLS_elementAsFunction(__VLS_intrinsicElements.div, __VLS_intrinsicElements.div)(__assign({ class: ("navbar bg-base-100 p-[2rem] z-[5] bg-transparent xl:p-[4rem] xl:px-0 border-b-2 border-gray-100") }));
@@ -118,10 +118,10 @@ function __VLS_template() {
     var __VLS_1 = __VLS_asFunctionalComponent(__VLS_0, new __VLS_0(__assign({ mode: ("out-in") }, { class: ("xl:hidden") })));
     var __VLS_2 = __VLS_1.apply(void 0, __spreadArray([__assign({ mode: ("out-in") }, { class: ("xl:hidden") })], __VLS_functionalComponentArgsRest(__VLS_1), false));
     if (!__VLS_ctx.isOpen) {
-        __VLS_elementAsFunction(__VLS_intrinsicElements.img)(__assign(__assign({ onClick: (__VLS_ctx.handleMenu) }, { src: ((__VLS_ctx.burgir)), alt: ("menu icon") }), { class: ("block z-[100] w-[1.7rem]") }));
+        __VLS_elementAsFunction(__VLS_intrinsicElements.img)(__assign(__assign({ onClick: (__VLS_ctx.handleMenu) }, { src: ((__VLS_ctx.burgir)), alt: ("open menu") }), { class: ("block z-[100] w-[1.7rem] h-[1.7rem]") }));
     }
     else {
-        __VLS_elementAsFunction(__VLS_intrinsicElements.img)(__assign(__assign({ onClick: (__VLS_ctx.handleMenu) }, { src: ((__VLS_ctx.closeMenu)), alt: ("menu icon") }), { class: ("block z-[100] w-[1.7rem]") }));
+        __VLS_elementAsFunction(__VLS_intrinsicElements.img)(__assign(__assign({ onClick: (__VLS_ctx.handleMenu) }, { src: ((__VLS_ctx.closeMenu)), alt: ("close menu") }), { class: ("block z-[100] w-[1.7rem] h-[1.7rem]") }));
     }
     __VLS_5.slots.default;
     var __VLS_5;
@@ -130,6 +130,9 @@ function __VLS_template() {
     for (var _c = 0, _d = __VLS_getVForSourceType((__VLS_ctx.linksData)); _c < _d.length; _c++) {
         var _e = _d[_c], item = _e[0], index = _e[1];
         __VLS_elementAsFunction(__VLS_intrinsicElements.li, __VLS_intrinsicElements.li)(__assign({ key: ((index)) }, { class: ("text-gray-600 capitalize cursor-pointer transition-colors duration-200 hover:text-gray-800 navLink") }));
+        __VLS_elementAsFunction(__VLS_intrinsicElements.a, __VLS_intrinsicElements.a)({
+            href: ("#"),
+        });
         (item);
     }
     __VLS_elementAsFunction(__VLS_intrinsicElements.div, __VLS_intrinsicElements.div)(__assign({ class: ("flex gap-x-[1.7rem] xl:gap-x-[4rem] xl:mr-[6rem]") }));
@@ -138,7 +141,7 @@ function __VLS_template() {
     // @ts-ignore navigation for `const cartRef = ref()`
     /** @type { typeof __VLS_ctx.cartRef } */ ;
     __VLS_elementAsFunction(__VLS_intrinsicElements.div, __VLS_intrinsicElements.div)(__assign({ class: ("indicator") }));
-    __VLS_elementAsFunction(__VLS_intrinsicElements.img)(__assign(__assign({ onClick: (__VLS_ctx.handleCart) }, { src: ((__VLS_ctx.cart)), alt: ("cart icon") }), { class: ("xl:w-[3rem] cartImg hover:brightness-0") }));
+    __VLS_elementAsFunction(__VLS_intrinsicElements.img)(__assign(__assign({ onClick: (__VLS_ctx.handleCart) }, { src: ((__VLS_ctx.cart)), alt: ("cart") }), { class: ("xl:w-[3rem] w-[2.2rem] cartImg hover:brightness-0") }));
     __VLS_elementAsFunction(__VLS_intrinsicElements.span, __VLS_intrinsicElements.span)(__assign({ class: ("badge badge-lg indicator-item z-[0] border-none text-white") }, { class: (({
             hidden: !__VLS_ctx.carAmount,
             'bg-orange-100': __VLS_ctx.carAmount > 0,
@@ -190,7 +193,7 @@ function __VLS_template() {
     var __VLS_15;
     var __VLS_16;
     var __VLS_17;
-    ['container', 'absolute', 'w-[60%]', 'h-[100%]', 'bg-white', 'left-0', 'p-[1rem]', 'pt-[9rem]', 'transition-transform', 'z-20', 'duration-300', 'menu', 'bg-base-200', 'rounded-box', 'w-fit', 'gap-y-[2.5rem]', 'bg-transparent', 'capitalize', 'text-[1.6rem]', 'font-bold', 'p-0', 'text-blue-100', 'navbar', 'bg-base-100', 'p-[2rem]', 'z-[5]', 'bg-transparent', 'xl:p-[4rem]', 'xl:px-0', 'border-b-2', 'border-gray-100', 'flex-1', 'gap-x-[2rem]', 'xl:hidden', 'block', 'z-[100]', 'w-[1.7rem]', 'block', 'z-[100]', 'w-[1.7rem]', 'mb-[.4rem]', 'hidden', 'ml-[4rem]', 'xl:flex', 'gap-x-[2.5rem]', 'text-gray-600', 'capitalize', 'cursor-pointer', 'transition-colors', 'duration-200', 'hover:text-gray-800', 'navLink', 'flex', 'gap-x-[1.7rem]', 'xl:gap-x-[4rem]', 'xl:mr-[6rem]', 'dropdown', 'dropdown-end', 'btn', 'btn-ghost', 'btn-circle', 'no-animation', 'indicator', 'xl:w-[3rem]', 'cartImg', 'hover:brightness-0', 'badge', 'badge-lg', 'indicator-item', 'z-[0]', 'border-none', 'text-white', 'hidden', 'bg-orange-100', 'hidden', 'xl:block', 'dropdown', 'dropdown-end', 'btn', 'btn-ghost', 'ghostBtn', 'btn-circle', 'avatar', 'xl:w-[5.5rem]', 'w-full', 'avatarBorder', 'rounded-full', 'xl:border-[2px]', 'xl:border-transparent', 'xl:hover:border-orange-100', 'bg-black', 'absolute', 'w-full', 'h-full', 'top-0', 'left-0', 'transition-opacity', 'duration-200', 'xl:hidden',];
+    ['container', 'absolute', 'w-[60%]', 'h-[100%]', 'bg-white', 'left-0', 'p-[1rem]', 'pt-[9rem]', 'transition-transform', 'z-20', 'duration-300', 'menu', 'bg-base-200', 'rounded-box', 'w-fit', 'gap-y-[2.5rem]', 'bg-transparent', 'capitalize', 'text-[1.6rem]', 'font-bold', 'p-0', 'text-blue-100', 'navbar', 'bg-base-100', 'p-[2rem]', 'z-[5]', 'bg-transparent', 'xl:p-[4rem]', 'xl:px-0', 'border-b-2', 'border-gray-100', 'flex-1', 'gap-x-[2rem]', 'xl:hidden', 'block', 'z-[100]', 'w-[1.7rem]', 'h-[1.7rem]', 'block', 'z-[100]', 'w-[1.7rem]', 'h-[1.7rem]', 'mb-[.4rem]', 'hidden', 'ml-[4rem]', 'xl:flex', 'gap-x-[2.5rem]', 'text-gray-600', 'capitalize', 'cursor-pointer', 'transition-colors', 'duration-200', 'hover:text-gray-800', 'navLink', 'flex', 'gap-x-[1.7rem]', 'xl:gap-x-[4rem]', 'xl:mr-[6rem]', 'dropdown', 'dropdown-end', 'btn', 'btn-ghost', 'btn-circle', 'no-animation', 'indicator', 'xl:w-[3rem]', 'w-[2.2rem]', 'cartImg', 'hover:brightness-0', 'badge', 'badge-lg', 'indicator-item', 'z-[0]', 'border-none', 'text-white', 'hidden', 'bg-orange-100', 'hidden', 'xl:block', 'dropdown', 'dropdown-end', 'btn', 'btn-ghost', 'ghostBtn', 'btn-circle', 'avatar', 'xl:w-[5.5rem]', 'w-full', 'avatarBorder', 'rounded-full', 'xl:border-[2px]', 'xl:border-transparent', 'xl:hover:border-orange-100', 'bg-black', 'absolute', 'w-full', 'h-full', 'top-0', 'left-0', 'transition-opacity', 'duration-200', 'xl:hidden',];
     var __VLS_slots;
     var $slots;
     var __VLS_inheritedAttrs;

@@ -24,11 +24,11 @@
 					</div>
 					<img
 						:src="trash"
-						alt="delete icon"
+						alt="delete items"
 						class="block xl:w-[1.8rem] cursor-pointer"
 						@click="emits('cleanCart', 0)" />
 				</div>
-				<button
+				<button type="button"
 					class="btn btnCheckout no-animation btn-block text-[1.6rem] mt-[2.2rem] py-[2.5rem] font-k700 leading-[0] bg-orange-100 rounded-2xl xl:py-[3rem] hover:bg-orange-400">
 					Checkout
 				</button>

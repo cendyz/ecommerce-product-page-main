@@ -5,15 +5,25 @@
 			:class="isOpen ? 'translate-x-0' : 'translate-x-[-100%]'">
 			<ul class="menu bg-base-200 rounded-box w-fit gap-y-[2.5rem] bg-transparent">
 				<li v-for="(item, index) in linksData" :key="index">
-					<a class="capitalize text-[1.6rem] font-bold p-0 text-blue-100">{{ item }}</a>
+					<a class="capitalize text-[1.6rem] font-bold p-0 text-blue-100" href="#">{{ item }}</a>
 				</li>
 			</ul>
 		</div>
-		<div class="navbar bg-base-100 p-[2rem] z-[5] bg-transparent xl:p-[4rem] xl:px-0 border-b-2 border-gray-100" >
+		<div class="navbar bg-base-100 p-[2rem] z-[5] bg-transparent xl:p-[4rem] xl:px-0 border-b-2 border-gray-100">
 			<div class="flex-1 gap-x-[2rem]">
 				<Transition mode="out-in" class="xl:hidden">
-					<img :src="burgir" alt="menu icon" class="block z-[100] w-[1.7rem]" @click="handleMenu" v-if="!isOpen" />
-					<img :src="closeMenu" alt="menu icon" class="block z-[100] w-[1.7rem]" @click="handleMenu" v-else />
+					<img
+						:src="burgir"
+						alt="open menu"
+						class="block z-[100] w-[1.7rem] h-[1.7rem]"
+						@click="handleMenu"
+						v-if="!isOpen" />
+					<img
+						:src="closeMenu"
+						alt="close menu"
+						class="block z-[100] w-[1.7rem] h-[1.7rem]"
+						@click="handleMenu"
+						v-else />
 				</Transition>
 				<img :src="logo" alt="sneakers" class="mb-[.4rem]" />
 				<ul class="hidden ml-[4rem] xl:flex gap-x-[2.5rem]">
@@ -21,7 +31,7 @@
 						v-for="(item, index) in linksData"
 						:key="index"
 						class="text-gray-600 capitalize cursor-pointer transition-colors duration-200 hover:text-gray-800 navLink">
-						{{ item }}
+						<a href="#">{{ item }}</a>
 					</li>
 				</ul>
 			</div>
@@ -29,7 +39,7 @@
 				<div class="dropdown dropdown-end">
 					<div tabindex="0" role="button" class="btn btn-ghost btn-circle no-animation" ref="cartRef">
 						<div class="indicator">
-							<img :src="cart" alt="cart icon" class="xl:w-[3rem] cartImg hover:brightness-0" @click="handleCart" />
+							<img :src="cart" alt="cart" class="xl:w-[3rem] w-[2.2rem] cartImg hover:brightness-0" @click="handleCart" />
 							<span
 								class="badge badge-lg indicator-item z-[0] border-none text-white"
 								:class="{
